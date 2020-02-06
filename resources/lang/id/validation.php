@@ -183,6 +183,8 @@ return [
 
         'frontend' => [
             'email' => 'Alamat E-mail',
+            'first_name' => 'Nama Depan',
+            'last_name' => 'Nama Belakang',
             'name' => 'Nama',
             'password' => 'Sandi',
             'password_confirmation' => 'Konfirmasi Sandi',
