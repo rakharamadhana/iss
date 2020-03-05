@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Models\Auth;
+namespace App\Models\Profile;
 
 use App\Models\RecordingModel;
 
 /**
  * Class SocialAccount.
  */
-class SocialAccount extends RecordingModel
+class Employment extends RecordingModel
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'social_accounts';
+    protected $table = 'employments';
 
     /**
      * The attributes that are mass assignable.
@@ -23,9 +23,11 @@ class SocialAccount extends RecordingModel
      */
     protected $fillable = [
         'user_id',
-        'provider',
-        'provider_id',
-        'token',
-        'avatar',
+        'institution',
+        'position',
+        'year_start',
+        'year_end',
+        'monthly_income',
     ];
+
 }
