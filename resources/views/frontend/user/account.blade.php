@@ -14,7 +14,7 @@
                     <div role="tabpanel">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
-                                <a href="#profile" class="nav-link active" aria-controls="profile" role="tab" data-toggle="tab">@lang('navs.frontend.user.profile')</a>
+                                <a href="#profile" class="nav-link active" aria-controls="profile" role="tab" data-toggle="tab">Detail</a>
                             </li>
 
                             <li class="nav-item">

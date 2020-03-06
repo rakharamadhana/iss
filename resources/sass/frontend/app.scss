@@ -1,13 +1,17 @@
 @import "../global";
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Bootstrap Overrides
 @import 'variables';
 
+// MDBootstrap
+@import '~mdbootstrap/css/mdb.min.css';
+@import '~mdbootstrap/css/bootstrap.min.css';
+
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+//@import '~bootstrap/scss/bootstrap';
 
 // Pages
 @import 'pages/dashboard';

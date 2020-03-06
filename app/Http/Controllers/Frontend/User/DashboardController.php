@@ -72,55 +72,55 @@ class DashboardController extends Controller
         );
     }
 
-    public function getPersonals(PersonalRepository $personalRepository){
+    public function getPersonals(){
         return Personal::all();
     }
 
-    public function getAcademics(AcademicRepository $academicRepository){
+    public function getAcademics(){
         return Academic::all();
     }
 
-    public function getExpertise(ExpertiseRepository $expertiseRepository){
+    public function getExpertise(){
         return Expertise::all();
     }
 
-    public function getBankAccounts(BankAccountRepository $bankAccountRepository){
+    public function getBankAccounts(){
         return BankAccount::all();
     }
 
-    public function getOrganizations(OrganizationRepository $organizationRepository){
+    public function getOrganizations(){
         return Organization::all();
     }
 
-    public function getPositions(PositionRepository $positionRepository){
+    public function getPositions(){
         return Position::all();
     }
 
-    public function getAchievements(AchievementRepository $achievementRepository){
+    public function getAchievements(){
         return Achievement::all();
     }
 
-    public function getEmployments(EmploymentRepository $employmentRepository){
+    public function getEmployments(){
         return Employment::all();
     }
 
-    public function getMentoring(MentoringRepository $mentoringRepository){
+    public function getMentoring(){
         return Mentoring::all();
     }
 
-    public function getFamilies(FamilyRepository $familyRepository){
+    public function getFamilies(){
         return Family::all();
     }
 
-    public function getEducation(EducationRepository $educationRepository){
+    public function getEducation(){
         return Education::all();
     }
 
-    public function getTrainings(TrainingRepository $trainingRepository){
+    public function getTrainings(){
         return Training::all();
     }
 
-    public function getSocialAccounts(SocialAccountRepository $socialAccountRepository){
+    public function getSocialAccounts(){
         return SocialAccount::all();
     }
 }

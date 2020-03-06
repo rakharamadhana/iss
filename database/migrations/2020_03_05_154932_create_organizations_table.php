@@ -17,7 +17,7 @@ class CreateOrganizationsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('level');
-            $table->string('description');
+            $table->string('name');
             $table->year('year');
             $table->string('position');
             $table->timestamps();

@@ -21,7 +21,7 @@ class CreateMentoringTable extends Migration
             $table->string('starting_year');
             $table->string('entrance');
             $table->string('status');
-            $table->string('quran_recitation');
+            $table->integer('quran_recitation');
 
             $table->timestamps();
         });

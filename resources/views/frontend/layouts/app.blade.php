@@ -9,8 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title', app_name())</title>
-        <meta name="description" content="@yield('meta_description', 'Laravel Boilerplate')">
-        <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
+        <meta name="description" content="@yield('meta_description', 'ISS')">
+        <meta name="author" content="@yield('meta_author', 'Rakha Ramadhana')">
         @yield('meta')
 
         {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
@@ -36,6 +36,13 @@
         </div><!-- #app -->
 
         <!-- Scripts -->
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"></script>
+
         @stack('before-scripts')
         {!! script(mix('js/manifest.js')) !!}
         {!! script(mix('js/vendor.js')) !!}
