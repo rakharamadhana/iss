@@ -23,7 +23,7 @@ class CreateEducationsTable extends Migration
             $table->year('year_end');
             $table->string('institution');
             $table->string('field');
-            $table->integer('average_score');
+            $table->decimal('average_score', 11, 2);
 
             $table->timestamps();
         });

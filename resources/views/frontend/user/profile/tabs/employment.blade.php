@@ -7,12 +7,14 @@
             <th>Tahun Selesai</th>
             <th>Pendapatan (per bulan)</th>
         </tr>
+        @foreach($employments as $employment)
         <tr>
-            <td>Inisiatif Zakat Indonesia</td>
-            <td>Staff Divisi IT</td>
-            <td>2018</td>
-            <td>sekarang</td>
-            <td>Rp {{number_format(10000000)}}</td>
+            <td>{{ $employment->institution }}</td>
+            <td>{{ $employment->position }}</td>
+            <td>{{ $employment->year_start }}</td>
+            <td>{{ $employment->year_end }}</td>
+            <td>Rp {{number_format( $employment->monthly_income )}}</td>
         </tr>
+        @endforeach
     </table>
 </div>

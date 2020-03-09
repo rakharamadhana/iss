@@ -45,31 +45,31 @@
                 </tr>
                 <tr>
                     <th>Tempat Lahir</th>
-                    <td>Jakarta</td>
+                    <td>{{ $personals->birthplace }}</td>
                 </tr>
                 <tr>
                     <th>Tanggal Lahir</th>
-                    <td>24 Januari 1997</td>
+                    <td>{{ $personals->birthdate }}</td>
                 </tr>
                 <tr>
                     <th>Jenis Kelamin</th>
-                    <td>Pria</td>
+                    <td>{{ $personals->gender }}</td>
                 </tr>
                 <tr>
                     <th>Alamat KTP</th>
-                    <td>Jl. Sejahtera Blok A 33 No.1 RT 7 RW 7 Pondok Jurang Mangu Indah</td>
+                    <td>{{ $personals->identity_address }}</td>
                 </tr>
                 <tr>
                     <th>Alamat Kost</th>
-                    <td>Jl. Pisangan Baru Utara No.54 RT 7 RW 12 Pisangan Baru</td>
+                    <td>{{ $personals->current_address }}</td>
                 </tr>
                 <tr>
                     <th>Golongan Darah</th>
-                    <td>A</td>
+                    <td>{{ $personals->blood_type }}</td>
                 </tr>
                 <tr>
                     <th>Hobi</th>
-                    <td>Main Komputer</td>
+                    <td>{{ $personals->interest }}</td>
                 </tr>
             </table>
         </div>
@@ -79,12 +79,12 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>No Handphone</th>
-                    <td colspan="2">+628176977298</td>
+                    <td colspan="2">{{ $personals->phone_number }}</td>
                 </tr>
                 <tr>
                     <th>Kontak Darurat (Nama/Nomor)</th>
-                    <td>Chaerul B. (Ayah)</td>
-                    <td>+6281380225638</td>
+                    <td>{{ $personals->emergency_contact_name }}</td>
+                    <td>{{ $personals->emergency_contact_phone_number }}</td>
                 </tr>
             </table>
         </div>
@@ -94,21 +94,21 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>Nama Ayah</th>
-                    <td colspan="4">Chaerul Boestami</td>
+                    <td colspan="4">{{ $families->father_name }}</td>
                 </tr>
                 <tr>
                     <th>Nama Ibu</th>
-                    <td colspan="4">Rahayu Boestami</td>
+                    <td colspan="4">{{ $families->mother_name }}</td>
                 </tr>
                 <tr>
                     <th>Alamat Orang Tua</th>
-                    <td colspan="4">Jl. Benda Timur 2 Blok E 70 No. 9 RT 7 RW 15 Pamulang 2</td>
+                    <td colspan="4">{{ $families->parent_address }}</td>
                 </tr>
                 <tr>
                     <th>Anak ke</th>
-                    <td>1</td>
+                    <td>{{ $families->child_number }}</td>
                     <td>dari</td>
-                    <td>4</td>
+                    <td>{{ $families->child_total }}</td>
                     <td>bersaudara</td>
                 </tr>
             </table>
@@ -119,47 +119,47 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>Status Akademik</th>
-                    <td>Sedang Kuliah S1</td>
+                    <td>{{ $academics->academic_status }}</td>
                 </tr>
                 <tr>
                     <th>Fakultas</th>
-                    <td>Teknik</td>
+                    <td>{{ $academics->faculty }}</td>
                 </tr>
                 <tr>
                     <th>Program Studi</th>
-                    <td>Pendidikan Teknik Informatika dan Komputer</td>
+                    <td>{{ $academics->study_program }}</td>
                 </tr>
                 <tr>
                     <th>Angkatan</th>
-                    <td>2014</td>
+                    <td>{{ $academics->year_enrolled }}</td>
                 </tr>
                 <tr>
-                    <th>NIM</th>
-                    <td>5235141932</td>
+                    <th>NRM</th>
+                    <td>{{ $academics->registration_number }}</td>
                 </tr>
                 <tr>
                     <th>PIN SIAKAD</th>
-                    <td>123456</td>
+                    <td>{{ $academics->pin_number }}</td>
                 </tr>
                 <tr>
                     <th>Bayaran UKT</th>
-                    <td>Rp. {{number_format(6000000)}}</td>
+                    <td>Rp. {{number_format( $academics->payment_amount )}}</td>
                 </tr>
                 <tr>
                     <th>Sumber Dana</th>
-                    <td>Beasiswa</td>
+                    <td>{{ $academics->fund_source }}</td>
                 </tr>
                 <tr>
                     <th>Status Beasiswa</th>
-                    <td>Ya</td>
+                    <td>{{ $academics->scholarship_status }}</td>
                 </tr>
                 <tr>
                     <th>Nama Beasiswa</th>
-                    <td>BIDIKMISI</td>
+                    <td>{{ $academics->scholarship_name }}</td>
                 </tr>
                 <tr>
                     <th>Jumlah Beasiswa</th>
-                    <td>Rp. {{number_format(6000000)}}</td>
+                    <td>Rp. {{number_format( $academics->scholarship_amount )}}</td>
                 </tr>
             </table>
         </div>
@@ -170,15 +170,15 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>Formal</th>
-                    <td>-</td>
+                    <td>{{ $positions->formal }}</td>
                 </tr>
                 <tr>
                     <th>Internal</th>
-                    <td>Keilmuan</td>
+                    <td>{{ $positions->internal }}</td>
                 </tr>
                 <tr>
                     <th>Pemimpin</th>
-                    <td>Adjie Boestami</td>
+                    <td>{{ $positions->internal_leader_name }}</td>
                 </tr>
             </table>
         </div>
@@ -188,23 +188,21 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>Tahun Mulai</th>
-                    <td>2014</td>
+                    <td>{{ $mentoring->starting_year }}</td>
                 </tr>
                 <tr>
                     <th>Jalur</th>
-                    <td>Kampus</td>
+                    <td>{{ $mentoring->entrance }}</td>
                 </tr>
                 <tr>
                     <th>Status</th>
-                    <td>Aktif</td>
+                    <td>{{ $mentoring->status }}</td>
                 </tr>
                 <tr>
                     <th>Hafalan Quran</th>
-                    <td>1 juz</td>
+                    <td>{{ $mentoring->quran_recitation }} juz</td>
                 </tr>
             </table>
         </div>
-
     </div>
-
 </div><!-- row -->

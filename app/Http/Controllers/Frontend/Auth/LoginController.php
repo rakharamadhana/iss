@@ -75,6 +75,12 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
+        // Store User data to Session
+        $request->session()->put('user_id', $user->id);
+        $request->session()->put('first_name', $user->first_name);
+        $request->session()->put('last_name', $user->last_name);
+        $request->session()->put('email', $user->email);
+
         // Check to see if the users account is confirmed and active
         if (! $user->isConfirmed()) {
             auth()->logout();

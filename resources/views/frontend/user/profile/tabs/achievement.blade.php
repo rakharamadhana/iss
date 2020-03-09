@@ -5,10 +5,12 @@
             <th>Deskripsi</th>
             <th>Tingkat</th>
         </tr>
+        @foreach($achievements as $achievement)
         <tr>
-            <td>2018</td>
-            <td>Best Idea Global Leader Summit @Japan</td>
-            <td>Internasional</td>
+            <td>{{ $achievement->year }}</td>
+            <td>{{ $achievement->description }}</td>
+            <td>{{ $achievement->level }}</td>
         </tr>
+        @endforeach
     </table>
 </div>

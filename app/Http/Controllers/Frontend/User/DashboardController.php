@@ -16,6 +16,7 @@ use App\Models\Profile\Personal;
 use App\Models\Profile\Position;
 use App\Models\Profile\SocialAccount;
 use App\Models\Profile\Training;
+use function GuzzleHttp\Promise\all;
 
 /**
  * Class DashboardController.
@@ -27,31 +28,33 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $personals = $this->getPersonals();
+        $user_id = session()->get('user_id');
 
-        $academics = $this->getAcademics();
+        $personals = $this->getPersonals($user_id);
 
-        $expertise = $this->getExpertise();
+        $academics = $this->getAcademics($user_id);
 
-        $bankAccounts = $this->getBankAccounts();
+        $expertise = $this->getExpertise($user_id);
 
-        $organizations = $this->getOrganizations();
+        $bankAccounts = $this->getBankAccounts($user_id);
 
-        $positions = $this->getPositions();
+        $organizations = $this->getOrganizations($user_id);
 
-        $achievements = $this->getAchievements();
+        $positions = $this->getPositions($user_id);
 
-        $employments = $this->getEmployments();
+        $achievements = $this->getAchievements($user_id);
 
-        $mentoring = $this->getMentoring();
+        $employments = $this->getEmployments($user_id);
 
-        $families = $this->getFamilies();
+        $mentoring = $this->getMentoring($user_id);
 
-        $educations = $this->getEducation();
+        $families = $this->getFamilies($user_id);
 
-        $trainings = $this->getTrainings();
+        $educations = $this->getEducation($user_id);
 
-        $social_accounts = $this->getSocialAccounts();
+        $trainings = $this->getTrainings($user_id);
+
+        $social_accounts = $this->getSocialAccounts($user_id);
 
         return view('frontend.user.dashboard',
             [
@@ -72,55 +75,55 @@ class DashboardController extends Controller
         );
     }
 
-    public function getPersonals(){
-        return Personal::all();
+    public function getPersonals(int $id){
+        return Personal::query()->where('user_id', $id)->first();
     }
 
-    public function getAcademics(){
-        return Academic::all();
+    public function getAcademics(int $id){
+        return Academic::query()->where('user_id', $id)->first();
     }
 
-    public function getExpertise(){
-        return Expertise::all();
+    public function getExpertise(int $id){
+        return Expertise::query()->where('user_id', $id)->get();
     }
 
-    public function getBankAccounts(){
-        return BankAccount::all();
+    public function getBankAccounts(int $id){
+        return BankAccount::query()->where('user_id', $id)->get();
     }
 
-    public function getOrganizations(){
-        return Organization::all();
+    public function getOrganizations(int $id){
+        return Organization::query()->where('user_id', $id)->get();
     }
 
-    public function getPositions(){
-        return Position::all();
+    public function getPositions(int $id){
+        return Position::query()->where('user_id', $id)->first();
     }
 
-    public function getAchievements(){
-        return Achievement::all();
+    public function getAchievements(int $id){
+        return Achievement::query()->where('user_id', $id)->get();
     }
 
-    public function getEmployments(){
-        return Employment::all();
+    public function getEmployments(int $id){
+        return Employment::query()->where('user_id', $id)->get();
     }
 
-    public function getMentoring(){
-        return Mentoring::all();
+    public function getMentoring(int $id){
+        return Mentoring::query()->where('user_id', $id)->first();
     }
 
-    public function getFamilies(){
-        return Family::all();
+    public function getFamilies(int $id){
+        return Family::query()->where('user_id', $id)->first();
     }
 
-    public function getEducation(){
-        return Education::all();
+    public function getEducation(int $id){
+        return Education::query()->where('user_id', $id)->get();
     }
 
-    public function getTrainings(){
-        return Training::all();
+    public function getTrainings(int $id){
+        return Training::query()->where('user_id', $id)->get();
     }
 
-    public function getSocialAccounts(){
-        return SocialAccount::all();
+    public function getSocialAccounts(int $id){
+        return SocialAccount::query()->where('user_id', $id)->get();
     }
 }

@@ -6,11 +6,13 @@
             <th>Tahun</th>
             <th>Posisi</th>
         </tr>
+        @foreach($organizations as $organization)
         <tr>
-            <td>Universitas</td>
-            <td>BEM UNJ</td>
-            <td>2017</td>
-            <td>Kepala Departemen Kominfo</td>
+            <td>{{ $organization->level }}</td>
+            <td>{{ $organization->name }}</td>
+            <td>{{ $organization->year }}</td>
+            <td>{{ $organization->position }}</td>
         </tr>
+        @endforeach
     </table>
 </div>

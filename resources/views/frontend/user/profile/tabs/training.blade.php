@@ -7,12 +7,14 @@
             <th>Bidang</th>
             <th>Tahun</th>
         </tr>
+        @foreach($trainings as $training)
         <tr>
-            <td>Training</td>
-            <td>Android Kejar</td>
-            <td>Google</td>
-            <td>Programming</td>
-            <td>2016</td>
+            <td>{{ $training->type }}</td>
+            <td>{{ $training->name }}</td>
+            <td>{{ $training->institution }}</td>
+            <td>{{ $training->field }}</td>
+            <td>{{ $training->year }}</td>
         </tr>
+        @endforeach
     </table>
 </div>

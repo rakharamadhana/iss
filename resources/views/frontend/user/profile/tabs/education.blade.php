@@ -8,13 +8,15 @@
             <th>Bidang</th>
             <th>Nilai Rerata / IPK</th>
         </tr>
+        @foreach($educations as $education)
         <tr>
-            <td>Sarjana</td>
-            <td>2014</td>
-            <td>2018</td>
-            <td>Universitas Negeri Jakarta</td>
-            <td>Pendidikan Teknik Informatika dan Komputer</td>
-            <td>{{ number_format(3.66, 2) }}</td>
+            <td>{{ $education->level }}</td>
+            <td>{{ $education->year_start }}</td>
+            <td>{{ $education->year_end }}</td>
+            <td>{{ $education->institution }}</td>
+            <td>{{ $education->field }}</td>
+            <td>{{ number_format( $education->average_score, 2) }}</td>
         </tr>
+        @endforeach
     </table>
 </div>
