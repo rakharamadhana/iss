@@ -28,6 +28,7 @@ return [
         'none' => 'Tidak ada',
         'show' => 'Tunjukkan',
         'toggle_navigation' => 'Alihkan Navigasi',
+        'more' => 'Lainnya',
     ],
 
     'backend' => [
@@ -72,6 +73,9 @@ return [
                     'roles' => 'Peran',
                     'social' => 'Social',
                     'total' => 'total pengguna|total pengguna',
+                    'last_name' => 'Nama Belakang',
+                    'first_name' => 'Nama Depan',
+                    'other_permissions' => 'Peran Lain',
                 ],
 
                 'tabs' => [

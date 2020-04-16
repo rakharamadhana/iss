@@ -17,6 +17,7 @@ class CreateSocialAccountsTable extends Migration
         Schema::create('social_accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_registration_number');
             $table->string('provider', 32);
             $table->string('provider_id');
             $table->text('token')->nullable(); // Text because Facebook tokens can be greater than 255 characters

@@ -16,6 +16,7 @@ class CreatePersonalsTable extends Migration
         Schema::create('personals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_registration_number');
 
             // Personal Details
             $table->string('birthplace');

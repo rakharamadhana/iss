@@ -16,11 +16,12 @@ class CreatePositionsTable extends Migration
         Schema::create('positions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_registration_number');
 
             // Position Information
             $table->string('formal');
             $table->string('internal');
-            $table->string('internal_leader_name');
+            $table->string('internal_leader_name')->nullable();
 
             $table->timestamps();
         });

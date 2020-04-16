@@ -16,12 +16,15 @@ class CreateMentoringTable extends Migration
         Schema::create('mentoring', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_registration_number');
 
             // Mentoring Information
             $table->string('starting_year');
             $table->string('entrance');
-            $table->string('status');
-            $table->integer('quran_recitation');
+            $table->string('mentor_name');
+            $table->string('mentor_phone_number');
+            $table->boolean('is_mentor');
+            $table->integer('quran_recitation')->nullable();
 
             $table->timestamps();
         });

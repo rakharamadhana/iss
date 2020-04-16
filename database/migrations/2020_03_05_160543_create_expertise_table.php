@@ -16,6 +16,7 @@ class CreateExpertiseTable extends Migration
         Schema::create('expertise', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_registration_number');
 
             $table->string('type');
             $table->string('description');

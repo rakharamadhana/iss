@@ -16,6 +16,7 @@ class CreateAcademicsTable extends Migration
         Schema::create('academics', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_registration_number');
 
             // Academic Information
             $table->string('academic_status');
@@ -24,11 +25,11 @@ class CreateAcademicsTable extends Migration
             $table->string('year_enrolled');
             $table->string('registration_number');
             $table->string('pin_number');
-            $table->string('payment_amount');
+            $table->bigInteger('payment_amount');
             $table->string('fund_source');
             $table->string('scholarship_status');
             $table->string('scholarship_name');
-            $table->string('scholarship_amount');
+            $table->bigInteger('scholarship_amount');
 
             $table->timestamps();
         });

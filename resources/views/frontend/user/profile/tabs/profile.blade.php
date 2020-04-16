@@ -45,31 +45,31 @@
                 </tr>
                 <tr>
                     <th>Tempat Lahir</th>
-                    <td>{{ $personals->birthplace }}</td>
+                    <td>{{ $personals ? $personals->birthplace : '' }}</td>
                 </tr>
                 <tr>
                     <th>Tanggal Lahir</th>
-                    <td>{{ $personals->birthdate }}</td>
+                    <td>{{ $personals ? $personals->birthdate : '' }}</td>
                 </tr>
                 <tr>
                     <th>Jenis Kelamin</th>
-                    <td>{{ $personals->gender }}</td>
+                    <td>{{ $personals ? $personals->gender : '' }}</td>
                 </tr>
                 <tr>
                     <th>Alamat KTP</th>
-                    <td>{{ $personals->identity_address }}</td>
+                    <td>{{ $personals ? $personals->identity_address : '' }}</td>
                 </tr>
                 <tr>
                     <th>Alamat Kost</th>
-                    <td>{{ $personals->current_address }}</td>
+                    <td>{{ $personals ? $personals->current_address : '' }}</td>
                 </tr>
                 <tr>
                     <th>Golongan Darah</th>
-                    <td>{{ $personals->blood_type }}</td>
+                    <td>{{ $personals ? $personals->blood_type : '' }}</td>
                 </tr>
                 <tr>
                     <th>Hobi</th>
-                    <td>{{ $personals->interest }}</td>
+                    <td>{{ $personals ? $personals->interest : ''}}</td>
                 </tr>
             </table>
         </div>
@@ -79,12 +79,12 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>No Handphone</th>
-                    <td colspan="2">{{ $personals->phone_number }}</td>
+                    <td colspan="2">{{ $personals ? $personals->phone_number : '' }}</td>
                 </tr>
                 <tr>
                     <th>Kontak Darurat (Nama/Nomor)</th>
-                    <td>{{ $personals->emergency_contact_name }}</td>
-                    <td>{{ $personals->emergency_contact_phone_number }}</td>
+                    <td>{{ $personals ? $personals->emergency_contact_name : '' }}</td>
+                    <td>{{ $personals ? $personals->emergency_contact_phone_number : '' }}</td>
                 </tr>
             </table>
         </div>
@@ -94,21 +94,21 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>Nama Ayah</th>
-                    <td colspan="4">{{ $families->father_name }}</td>
+                    <td colspan="4">{{ $families ? $families->father_name : ''}}</td>
                 </tr>
                 <tr>
                     <th>Nama Ibu</th>
-                    <td colspan="4">{{ $families->mother_name }}</td>
+                    <td colspan="4">{{ $families ? $families->mother_name : '' }}</td>
                 </tr>
                 <tr>
                     <th>Alamat Orang Tua</th>
-                    <td colspan="4">{{ $families->parent_address }}</td>
+                    <td colspan="4">{{ $families ? $families->parent_address : '' }}</td>
                 </tr>
                 <tr>
                     <th>Anak ke</th>
-                    <td>{{ $families->child_number }}</td>
+                    <td>{{ $families ? $families->child_number : '' }}</td>
                     <td>dari</td>
-                    <td>{{ $families->child_total }}</td>
+                    <td>{{ $families ? $families->child_total : '' }}</td>
                     <td>bersaudara</td>
                 </tr>
             </table>
@@ -119,47 +119,47 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>Status Akademik</th>
-                    <td>{{ $academics->academic_status }}</td>
+                    <td>{{ $academics ? $academics->academic_status : ''}}</td>
                 </tr>
                 <tr>
                     <th>Fakultas</th>
-                    <td>{{ $academics->faculty }}</td>
+                    <td>{{ $academics ? $academics->faculty : '' }}</td>
                 </tr>
                 <tr>
                     <th>Program Studi</th>
-                    <td>{{ $academics->study_program }}</td>
+                    <td>{{ $academics ? $academics->study_program : '' }}</td>
                 </tr>
                 <tr>
                     <th>Angkatan</th>
-                    <td>{{ $academics->year_enrolled }}</td>
+                    <td>{{ $academics ? $academics->year_enrolled : '' }}</td>
                 </tr>
                 <tr>
                     <th>NRM</th>
-                    <td>{{ $academics->registration_number }}</td>
+                    <td>{{ $academics ? $academics->registration_number : '' }}</td>
                 </tr>
                 <tr>
                     <th>PIN SIAKAD</th>
-                    <td>{{ $academics->pin_number }}</td>
+                    <td>{{ $academics ? $academics->pin_number : '' }}</td>
                 </tr>
                 <tr>
                     <th>Bayaran UKT</th>
-                    <td>Rp. {{number_format( $academics->payment_amount )}}</td>
+                    <td>Rp. {{number_format( $academics ? $academics->payment_amount : 0 )}}</td>
                 </tr>
                 <tr>
                     <th>Sumber Dana</th>
-                    <td>{{ $academics->fund_source }}</td>
+                    <td>{{ $academics ? $academics->fund_source : ''}}</td>
                 </tr>
                 <tr>
                     <th>Status Beasiswa</th>
-                    <td>{{ $academics->scholarship_status }}</td>
+                    <td>{{ $academics ? $academics->scholarship_status : '' }}</td>
                 </tr>
                 <tr>
                     <th>Nama Beasiswa</th>
-                    <td>{{ $academics->scholarship_name }}</td>
+                    <td>{{ $academics ? $academics->scholarship_name : '' }}</td>
                 </tr>
                 <tr>
                     <th>Jumlah Beasiswa</th>
-                    <td>Rp. {{number_format( $academics->scholarship_amount )}}</td>
+                    <td>Rp. {{number_format( $academics ? $academics->scholarship_amount : 0)}}</td>
                 </tr>
             </table>
         </div>
@@ -170,15 +170,15 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>Formal</th>
-                    <td>{{ $positions->formal }}</td>
+                    <td>{{ $positions ? $positions->formal : '' }}</td>
                 </tr>
                 <tr>
                     <th>Internal</th>
-                    <td>{{ $positions->internal }}</td>
+                    <td>{{ $positions ? $positions->internal : '' }}</td>
                 </tr>
                 <tr>
                     <th>Pemimpin</th>
-                    <td>{{ $positions->internal_leader_name }}</td>
+                    <td>{{ $positions ? $positions->internal_leader_name : '' }}</td>
                 </tr>
             </table>
         </div>
@@ -188,19 +188,19 @@
             <table class="table table-striped table-hover table-bordered">
                 <tr>
                     <th>Tahun Mulai</th>
-                    <td>{{ $mentoring->starting_year }}</td>
+                    <td>{{ $mentoring ? $mentoring->starting_year : '' }}</td>
                 </tr>
                 <tr>
                     <th>Jalur</th>
-                    <td>{{ $mentoring->entrance }}</td>
+                    <td>{{ $mentoring ? $mentoring->entrance : '' }}</td>
                 </tr>
                 <tr>
                     <th>Status</th>
-                    <td>{{ $mentoring->status }}</td>
+                    <td>{{ $mentoring ? $mentoring->status : '' }}</td>
                 </tr>
                 <tr>
                     <th>Hafalan Quran</th>
-                    <td>{{ $mentoring->quran_recitation }} juz</td>
+                    <td>{{ $mentoring ? $mentoring->quran_recitation : '' }} juz</td>
                 </tr>
             </table>
         </div>
