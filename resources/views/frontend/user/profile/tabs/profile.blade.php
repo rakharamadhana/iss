@@ -159,12 +159,10 @@
                     <th>Mendapatkan Beasiswa</th>
                     <td>{{ $academics ? ucfirst(strtolower($academics->scholarship_status)) : '' }}</td>
                 </tr>
-                @if($academics->scholarship_status == 'IYA')
                 <tr>
                     <th>Nama Beasiswa</th>
                     <td>{{ $academics ? $academics->scholarship_name : '' }}</td>
                 </tr>
-                @endif
                 <tr>
                     <th>Jumlah Beasiswa</th>
                     <td>Rp. {{number_format( $academics ? $academics->scholarship_amount : 0)}}</td>
