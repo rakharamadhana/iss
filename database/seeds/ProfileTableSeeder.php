@@ -21,6 +21,7 @@ class ProfileTableSeeder extends Seeder
         $this->call(MentoringTableSeeder::class);
         $this->call(AcademicTableSeeder::class);
         $this->call(PersonalTableSeeder::class);
+        $this->call(SocialAccountTableSeeder::class);
 
         $this->enableForeignKeys();
     }

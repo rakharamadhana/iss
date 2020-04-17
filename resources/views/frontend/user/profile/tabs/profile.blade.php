@@ -34,7 +34,7 @@
     <div class="col order-1 order-sm-1 mb-4">
         <div class="table-responsive">
             <h3>Biodata</h3>
-            <table class="table table-striped table-hover table-bordered">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th>Nama Lengkap</th>
                     <td>{{ $logged_in_user->name }}</td>
@@ -53,14 +53,14 @@
                 </tr>
                 <tr>
                     <th>Jenis Kelamin</th>
-                    <td>{{ $personals ? $personals->gender : '' }}</td>
+                    <td>{{ $personals ? ucfirst(strtolower($personals->gender)) : '' }}</td>
                 </tr>
                 <tr>
                     <th>Alamat KTP</th>
                     <td>{{ $personals ? $personals->identity_address : '' }}</td>
                 </tr>
                 <tr>
-                    <th>Alamat Kost</th>
+                    <th>Tempat Tinggal Saat Ini</th>
                     <td>{{ $personals ? $personals->current_address : '' }}</td>
                 </tr>
                 <tr>
@@ -76,7 +76,7 @@
 
         <h3>Kontak</h3>
         <div class="table-responsive">
-            <table class="table table-striped table-hover table-bordered">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th>No Handphone</th>
                     <td colspan="2">{{ $personals ? $personals->phone_number : '' }}</td>
@@ -86,12 +86,18 @@
                     <td>{{ $personals ? $personals->emergency_contact_name : '' }}</td>
                     <td>{{ $personals ? $personals->emergency_contact_phone_number : '' }}</td>
                 </tr>
+                @foreach($social_accounts as $social_account)
+                <tr>
+                    <th>{{ $social_account->provider }}</th>
+                    <td colspan="2">{{ $social_account->provider_id }}</td>
+                </tr>
+                @endforeach
             </table>
         </div>
 
         <h3>Data Keluarga</h3>
         <div class="table-responsive">
-            <table class="table table-striped table-hover table-bordered">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th>Nama Ayah</th>
                     <td colspan="4">{{ $families ? $families->father_name : ''}}</td>
@@ -116,10 +122,10 @@
 
         <h3>Akademik</h3>
         <div class="table-responsive">
-            <table class="table table-striped table-hover table-bordered">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th>Status Akademik</th>
-                    <td>{{ $academics ? $academics->academic_status : ''}}</td>
+                    <td>{{ $academics ? ucfirst(strtolower($academics->academic_status)) : ''}}</td>
                 </tr>
                 <tr>
                     <th>Fakultas</th>
@@ -147,16 +153,18 @@
                 </tr>
                 <tr>
                     <th>Sumber Dana</th>
-                    <td>{{ $academics ? $academics->fund_source : ''}}</td>
+                    <td>{{ $academics ? ucfirst(strtolower($academics->fund_source)) : ''}}</td>
                 </tr>
                 <tr>
-                    <th>Status Beasiswa</th>
-                    <td>{{ $academics ? $academics->scholarship_status : '' }}</td>
+                    <th>Mendapatkan Beasiswa</th>
+                    <td>{{ $academics ? ucfirst(strtolower($academics->scholarship_status)) : '' }}</td>
                 </tr>
+                @if($academics->scholarship_status == 'IYA')
                 <tr>
                     <th>Nama Beasiswa</th>
                     <td>{{ $academics ? $academics->scholarship_name : '' }}</td>
                 </tr>
+                @endif
                 <tr>
                     <th>Jumlah Beasiswa</th>
                     <td>Rp. {{number_format( $academics ? $academics->scholarship_amount : 0)}}</td>
@@ -167,14 +175,14 @@
 
         <h3>Amanah</h3>
         <div class="table-responsive">
-            <table class="table table-striped table-hover table-bordered">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th>Formal</th>
-                    <td>{{ $positions ? $positions->formal : '' }}</td>
+                    <td>{{ $positions ? ucfirst(strtolower($positions->formal)) : '' }}</td>
                 </tr>
                 <tr>
                     <th>Internal</th>
-                    <td>{{ $positions ? $positions->internal : '' }}</td>
+                    <td>{{ $positions ? ucfirst(strtolower($positions->internal)) : '' }}</td>
                 </tr>
                 <tr>
                     <th>Pemimpin</th>
@@ -185,14 +193,14 @@
 
         <h3>Mentoring</h3>
         <div class="table-responsive">
-            <table class="table table-striped table-hover table-bordered">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th>Tahun Mulai</th>
                     <td>{{ $mentoring ? $mentoring->starting_year : '' }}</td>
                 </tr>
                 <tr>
                     <th>Jalur</th>
-                    <td>{{ $mentoring ? $mentoring->entrance : '' }}</td>
+                    <td>{{ $mentoring ? ucfirst(strtolower($mentoring->entrance)) : '' }}</td>
                 </tr>
                 <tr>
                     <th>Status</th>

@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 /**
  * Class FamilyTableSeeder
  */
-class PersonalTableSeeder extends Seeder
+class SocialAccountTableSeeder extends Seeder
 {
     use DisableForeignKeys;
 
@@ -21,22 +21,20 @@ class PersonalTableSeeder extends Seeder
         $this->disableForeignKeys();
 
         // Add the master administrator, user id of 1
-        $personals = self::getPersonals();
+        $socialAccounts = self::getSocialAccounts();
 
-        if (!empty($personals)) {
+        if (!empty($socialAccounts)) {
 
-            foreach ($personals as $personal) {
+            foreach ($socialAccounts as $socialAccount) {
                 // dd($user['password']);
-                $user = User::query()->where('registration_number', $personal['user_registration_number'])->first();
+                $user = User::query()->where('registration_number', $socialAccount['user_registration_number'])->first();
                 $user_id = $user->getAttribute('id');
-                $personal['user_id'] = $user_id;
+                $socialAccount['user_id'] = $user_id;
 
-                $personal['birthdate'] = Carbon::parse($personal['birthdate'])->format('Y-m-d');
+                $socialAccount['created_at'] = Carbon::now('Asia/Jakarta');
+                $socialAccount['updated_at'] = Carbon::now('Asia/Jakarta');
 
-                $personal['created_at'] = Carbon::now('Asia/Jakarta');
-                $personal['updated_at'] = Carbon::now('Asia/Jakarta');
-
-                DB::table('personals')->insert($personal);
+                DB::table('social_accounts')->insert($socialAccount);
             }
 
         }
@@ -70,8 +68,8 @@ class PersonalTableSeeder extends Seeder
      *
      * @return array
      */
-    public static function getPersonals()
+    public static function getSocialAccounts()
     {
-        return self::getCsvData(self::$path . '/personals.csv');
+        return self::getCsvData(self::$path . '/social_accounts.csv');
     }
 }

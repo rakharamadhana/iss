@@ -39,7 +39,7 @@ class AcademicTableSeeder extends Seeder
                     $academic['payment_amount'] = 0;
                 }
 
-                if($academic['scholarship_status'] == 'YA'){
+                if($academic['scholarship_status'] == 'IYA'){
                     $academic['fund_source'] = 'BEASISWA';
                     $academic['scholarship_name'] = 'Beasiswa';
                 }else{
